@@ -7,6 +7,15 @@ import random
 
 
 app = FastAPI(title="AI-Powered Data Pipeline (Mock)")
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],      # Allow any domain
+    allow_methods=["*"],      # Allow all HTTP methods (GET, POST, OPTIONS, etc.)
+    allow_headers=["*"],      # Allow all headers
+)
+
 @app.get("/")
 def home():
     return {"message": "AI Pipeline is running! Go to /docs to test the endpoint."}
