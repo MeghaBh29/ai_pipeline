@@ -4,11 +4,12 @@ from datetime import datetime
 import requests
 import json
 import random
+
+
+app = FastAPI(title="AI-Powered Data Pipeline (Mock)")
 @app.get("/")
 def home():
     return {"message": "AI Pipeline is running! Go to /docs to test the endpoint."}
-
-app = FastAPI(title="AI-Powered Data Pipeline (Mock)")
 
 # -------------------------------
 # Request Model
